@@ -1,32 +1,41 @@
 from random import randint
 
-t = ['Rock', 'Paper', 'Scissors']
+X = ['Rock', 'Paper', 'Scissors']
+Score = int(0)
 
-computer = t[randint(0,2)]
 
-player = False
+Computer = X[randint(0,2)]
 
-while player == False:
-    player = input('Rock, Paper, Scissors? ')
-    if player == computer:
+Player = False
+
+while Player == False:
+    Player = input('Rock, Paper, Scissors? ')
+    if Player == Computer:
         print('Draw!')
-    elif player == 'Rock':
-        if computer == 'Paper':
-            print('You lose!', computer, 'beats', player)
+    elif Player == 'Rock':
+        if Computer == 'Paper':
+            print('You lose!', Computer, 'beats', Player)
+            Score = 0
         else:
-            print('You Win!', player, 'beats', computer)
-    elif player == 'Paper':
-        if computer == 'Scissors':
-            print('You Lose!', computer, 'beats', player)
+            print('You Win!', Player, 'beats', Computer)
+            Score = Score + 1
+    elif Player == 'Paper':
+        if Computer == 'Scissors':
+            print('You Lose!', Computer, 'beats', Player)
+            Score = 0
         else:
-            print('You Win!', player, 'beats', computer)
-    elif player == 'Scissors':
-        if computer == 'Rock':
-            print('You Lose!', computer, 'beats', player)
+            print('You Win!', Player, 'beats', Computer)
+            Score = Score + 1
+    elif Player == 'Scissors':
+        if Computer == 'Rock':
+            print('You Lose!', Computer, 'beats', Player)
+            Score = 0
         else:
-            print('You Win!', player, 'beats', computer)
+            print('You Win!', Player, 'beats', Computer)
+            Score = Score + 1
     else:
         print('Invalid answer. Please check your spelling!')
     
-    player = False
-    computer = t[randint(0,2)]
+    Player = False
+    Computer = X[randint(0,2)]
+    print('Score:', Score)
