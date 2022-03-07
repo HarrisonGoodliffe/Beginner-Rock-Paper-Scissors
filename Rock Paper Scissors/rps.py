@@ -1,14 +1,14 @@
 from random import randint
 
 X = ['Rock', 'Paper', 'Scissors']
-Score = int(0)
+Score = 0
 
 
 Computer = X[randint(0,2)]
 
 Player = False
 
-while Player == False:
+while not Player:
     Player = input('Rock, Paper, Scissors? ')
     if Player == Computer:
         print('Draw!')
